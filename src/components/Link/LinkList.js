@@ -1,5 +1,6 @@
 import React from "react";
 import firebase from "../../firebase";
+import LinkItem from "./LinkItem";
 
 const LinkList = (props) => {
   const [links, setLinks] = React.useState([]);
@@ -34,7 +35,13 @@ const LinkList = (props) => {
   return (
     <>
       {links.map((link, index) => (
-        <LinkItem key={link.id} />
+        <LinkItem
+          key={link.id}
+          showCount={true}
+          url={`/link/${link.id}`}
+          link={link}
+          index={index + 1}
+        />
       ))}
     </>
   );
