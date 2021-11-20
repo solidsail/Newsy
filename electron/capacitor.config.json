@@ -1,8 +1,0 @@
-{
-  "appId": "com.solidsail.newsy",
-  "appName": "Newsy",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "build",
-  "cordova": {}
-}

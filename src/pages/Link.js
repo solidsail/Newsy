@@ -1,6 +1,6 @@
 import React from "react";
 import firebase from "../firebase";
-import { Plugins } from "@capacitor/core";
+// import { Plugins } from "@capacitor/core";
 import UserContext from "../contexts/UserContext";
 import {
   IonPage,
@@ -16,7 +16,7 @@ import LinkItem from "../components/Link/LinkItem";
 import CommentModal from "../components/Link/CommentModal";
 import LinkComment from "../components/Link/LinkComment";
 
-const { Browser } = Plugins;
+// const { Browser } = Plugins;
 
 const Link = (props) => {
   const { user } = React.useContext(UserContext);
@@ -109,11 +109,11 @@ const Link = (props) => {
     return user && user.uid === link.postedBy.id;
   }
 
-  async function openBrowser() {
-    await Browser.open({
-      url: link.url,
-    });
-  }
+  // async function openBrowser() {
+  //   await Browser.open({
+  //     url: link.url,
+  //   });
+  // }
 
   return (
     <IonPage>
@@ -135,7 +135,7 @@ const Link = (props) => {
             <IonGrid>
               <IonRow>
                 <IonCol class="ion-text-center">
-                  <LinkItem link={link} browser={openBrowser} />
+                  <LinkItem link={link} />
                   <IonButton onClick={() => handleAddVote()} size="small">
                     Upvote
                   </IonButton>
